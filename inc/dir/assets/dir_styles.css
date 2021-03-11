@@ -1,0 +1,73 @@
+.dirlist_div { 
+	width: 100%; 
+	max-height: 70vh; 
+	overflow: auto; 
+	font-size: .8rem;
+	display:flex;
+	flex-wrap: wrap;
+}
+
+.dirlist_row {
+	width: 100%;
+	padding: .5rem 0;
+	border-bottom: 1px solid gray;
+}
+
+.dirlist_unions {
+	margin: 2rem;
+	
+}
+
+.dir_entry {
+	padding: 1rem;
+	width: auto;
+}
+
+h3 { padding: .5rem 0; }
+
+h4, .h4 { font-variant: small-caps; }
+
+input[type='text'] { padding: 0 !important; }
+
+input[type=checkbox], .item { -webkit-appearance: auto !important; }
+
+
+/* COUNSELOR DIRECTORY STYLES */
+
+@charset "utf-8";
+/* CSS Document */
+
+a { color: black !important; }
+
+
+.half_col {
+	width:46%; 
+	text-align:left; 
+	float:left; 
+	padding-left:4%;
+}
+
+.left_col {
+	width:25%; 
+	text-align:right; 
+	float:left; 
+	font-weight:bold;
+}
+
+hr { background-color: gray !important; margin-top: .5rem;  }
+
+.spacer { clear:both; padding: .5rem 0; }
+
+.right_col {
+	width:70%; 
+	text-align:left; 
+	float:left;
+	padding-left:1.5em;
+}
+label {
+	float:left; width:90%;
+}
+.item { float:left; width:5%; }
+
+.myrow { display:block; width:100%;}
+
