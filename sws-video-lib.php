@@ -3,7 +3,7 @@
  * Plugin Name:       SWS Video Library
  * Plugin URI:        https://ccharacter.com/custom-plugins/sws-video-lib/
  * Description:       Video lib
- * Version:           1.31
+ * Version:           1.32
  * Requires at least: 5.2
  * Requires PHP:      5.5
  * Author:            Sharon Stromberg
