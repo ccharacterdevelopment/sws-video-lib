@@ -1,9 +1,9 @@
 {
 	"name": "SWS Directory/Interactive Map",
 	"version": "1.3",
-	"download_url": "https://github.com/ccharacter/sws-dir-map/archive/v1.3.zip",
+	"download_url": "https://github.com/ccharacter/sws-video-lib/archive/v1.3.zip",
 
-	"homepage": "https://ccharacter.com/custom-plugins/sws-dir-map/",
+	"homepage": "https://ccharacter.com/custom-plugins/sws-video-lib/",
 	"requires": "4.0",
 	"tested": "5.6",
 	"last_updated": "2021-02-09",
@@ -13,7 +13,7 @@
 	"author_homepage": "http://ccharacter.com/",
 
 	"sections": {
-		"description": "This plugin creates shortcodes for displaying maps and directories using data pulled from the DBI system.<ul><li>[sws_dir_listing group='conf_asam' group2='conf_dir' all_conf='Y' group_by_conf='Y' min_title='ASAM' show_prefixes='Y']</li><li>[sws_dir_search group='conf_asam' min_title='ASAM' show_prefixes='Y']</li><li>[sws_dir_photo group='conf_asam' group2='conf_dir' all_conf='Y' group_by_conf='Y' min_title='ASAM' show_prefixes='Y']</li></ul>"
+		"description": "Video library"
 	}
 
 }

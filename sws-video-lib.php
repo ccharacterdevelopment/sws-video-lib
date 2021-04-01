@@ -22,10 +22,62 @@ $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
 	'sws-video-lib'
 );
 
-//require_once plugin_dir_path(__FILE__)."inc/dir/assets/Db.php";
+require_once plugin_dir_path(__FILE__)."inc/custom_post_type.php.php";
 //require_once plugin_dir_path(__FILE__)."inc/dir/assets/functions_sws.php";
 //require_once plugin_dir_path(__FILE__)."inc/dir/assets/dir_functions.php";
 
+
+// CREATE DEFAULT PAGE
+function devotional_defaults() {
+	if (!(sws_ck_post_exists("Daily Devotional","page"))) {
+			
+		$arr=array("post_type"=>"page","post_status"=>"publish","post_content"=>"[sws_daily_devotional]","post_title"=>"Daily Devotional",  'page_template'  => 'single-devotional.php');
+		$id=wp_insert_post($arr);
+		
+		// INTRO
+		update_post_meta($id,'intro',"An inspirational reading and Scripture passage to start your day off right");
+		// THUMBNAIL	
+		$image_url = plugins_url( 'img/1526049-SM.jpg', __FILE__); //echo $image_url;
+		
+		$upload_dir = wp_upload_dir();
+		
+		$image_data = file_get_contents( $image_url );
+		
+		$filename = basename( $image_url );
+		
+		if ( wp_mkdir_p( $upload_dir['path'] ) ) {
+		  $file = $upload_dir['path'] . '/' . $filename;
+		}
+		else {
+		  $file = $upload_dir['basedir'] . '/' . $filename;
+		}
+		
+		file_put_contents( $file, $image_data );
+		
+		$wp_filetype = wp_check_filetype( $filename, null );
+		
+		$attachment = array(
+		  'post_mime_type' => $wp_filetype['type'],
+		  'post_title' => sanitize_file_name( $filename ),
+		  'post_content' => '',
+		  'post_status' => 'inherit'
+		);
+		
+		$attach_id = wp_insert_attachment( $attachment, $file, $id);
+		require_once( ABSPATH . 'wp-admin/includes/image.php' );
+		$attach_data = wp_generate_attachment_metadata( $attach_id, $file );
+		wp_update_attachment_metadata( $attach_id, $attach_data );
+		set_post_thumbnail( $id, $attach_id );
+
+	}
+	// add to admin	
+   	global $submenu;
+    $permalink = '/daily-devotional';
+    $submenu['edit.php?post_type=dev_reading'][] = array( 'Today\'s Devotional', 'manage_options', $permalink );
+
+    flush_rewrite_rules();
+}
+//add_action('admin_menu', 'devotional_defaults');
 
 // SHORTCODE FOR directories  
 /*function sws_dir_show($atts) {
