@@ -22,7 +22,7 @@ $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
 	'sws-video-lib'
 );
 
-require_once plugin_dir_path(__FILE__)."inc/custom_post_type.php.php";
+require_once plugin_dir_path(__FILE__)."inc/custom_post_type.php";
 //require_once plugin_dir_path(__FILE__)."inc/dir/assets/functions_sws.php";
 //require_once plugin_dir_path(__FILE__)."inc/dir/assets/dir_functions.php";
 
